@@ -14,11 +14,20 @@ console.log(semaine[semaine.length-1])//affichier le dernier elements du tableau
 // 3. Nombre d'éléments dans un tableau
 // EXERCICE 3 : Affichez le nombre de jours dans une semaine et le dernier jour de la semaine
 console.log(semaine.length);
+console.table(semaine);
+
 
 // 4. Modifier les données d'un tableau
 // EXERCICE 4 : Modifiez "samedi" en "saturday", réaffichez le tableau, stockez "dimanche" dans une variable jourFerie, affichez le contenu de la variable, ajoutez un nouveau jour, "dimanche2", à la fin de la semaine, puis réaffichez le tableau des jours de la semaine.
+semaine[5]= 'saturday';
 
-
+for (let i = 0; i <semaine.length ; i++) {
+    console.log(semaine[i]);
+}
 // 5. Un tableau peut contenir des données de différents types
 // 6. Méthodes associées à un tableau
 // EXERCICE 5 : Suivez les consignes pour manipuler le tableau de fruits
+semaine[semaine.length]= 'dimanche2';
+semaine.push('dimanche3');
+semaine.unshift('lundis1');
+console.table(semaine);
