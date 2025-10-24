@@ -13,7 +13,99 @@
 // 7. Utilisez la fonction 'calculateurPourboire' pour calculer les pourboires pour chaque facture du tableau 'factures' et ajoutez-les au tableau 'pourboires'.
 // 8. Pour chaque facture, calculez le montant final payé en ajoutant le montant de la facture au montant du pourboire, puis ajoutez-le au tableau 'montantsFinaux'.
 // 9. Affichez les tableaux 'pourboires' et 'montantsFinaux' dans la console pour voir les résultats.
-const factures =  [];
+/*
+const factures =  [10, 100, 300];
+const pourboires =  [];
+const montantsFinaux =  [];
 function calculateurPourboire(facture) {
+    let pourboire ;
+if (facture < 50) {
+    pourboire =  facture*0.20;
+}else if ((facture => 50) && (facture < 200) ) {
+    pourboire =  facture*0.15;
 
+    }else {
+    pourboire =  facture*0.10;
+
+    return pourboire;
 }
+}
+factures.forEach(facture => {
+    let pourboire;
+    let montantFinale;
+    pourboire = calculateurPourboire(facture);
+    montantFinale = facture+pourboire;
+})
+
+console.log("les factures");
+factures.forEach(facture => {
+    console.log(facture);
+})
+console.log("les Pourboires");
+
+calculateurPourboire(pourboires);
+pourboires.forEach(pourboire => {
+    console.log(pourboire);
+})
+
+console.log("le montant finaux");
+
+calculateurPourboire(montantsFinaux);
+montantsFinaux.forEach(ele => {
+    console.log(ele);
+})
+
+ */
+
+
+
+
+function afficheTableaux(monTableaux) {
+    monTableaux.forEach(uneValeurDeMonTableau => {
+        console.log(uneValeurDeMonTableau);
+    });
+}
+
+function calculateurPourboire(facture) {
+    let pourboires ;
+
+    if (facture<50){
+        pourboires  = facture*0.20;
+    }
+    else if (facture>50 && facture<200){
+        pourboires  = facture*0.15;
+    }
+    else {
+        pourboires  = facture*0.10;
+    }
+
+
+    return pourboires;
+}
+
+const factures = [10, 100, 300];
+const pourboires = [];
+const montantsFinaux = [];
+
+factures.forEach(montantFacture =>{
+    let pourboire;
+    let montantFinale;
+    pourboire = calculateurPourboire(montantFacture);
+    montantFinale = pourboire+montantFacture;
+
+    pourboires.push(pourboire);
+    montantsFinaux.push(montantFinale);
+});
+
+console.log("les factures");
+afficheTableaux(factures);
+console.log("les Pourboires");
+
+afficheTableaux(pourboires);
+
+console.log("le montant finaux");
+
+afficheTableaux(montantsFinaux);
+
+
+

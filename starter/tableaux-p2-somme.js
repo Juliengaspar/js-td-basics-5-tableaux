@@ -15,8 +15,40 @@ Version alternative (avec BONUS) :
 4. Affichez le message final : "… + … + … = …".
 */
 
+const numbers = [11, 3, 7, 2, 9, 10];
+let message = " "
+let sum = 0;
 
+console.log("Voici mon tableau de nombres :")
+for (let i = 1; i < numbers.length; i++) {
+    console.log(numbers[i]);
+    sum +=  numbers[i];
+    message +=  numbers[i];
+    if (i < numbers.length - 1) {
+        message += " + " ;
+    }
+}
+    console.log(message+ ' =' + sum)
+//boucle foreach
+console.log("boucle foreach");
+numbers.forEach(number => {
+    //console.log(`${number}+`);
+    sum += number;
+})
+    console.log(`somme des valeurs du tableau = ${sum}`);
 
+console.log("boucle forof");
 
+let sum2 = 0;
+let message2 = " ";
+for (const number of numbers) {
+    //console.log(`${number}+`);
+    sum2 += number;
+    message2 +=   ' + ' + number;
+    if (number < numbers.length - 1) {
+        message2 += " + " ;
+    }
 
-
+}
+    console.log(message2 + ' =' + sum);
+    console.log(`somme des valeurs du tableau = ${sum2}`);
