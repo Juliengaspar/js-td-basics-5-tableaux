@@ -25,3 +25,23 @@ for (const mousquetaire of mousquetaires) {
     console.log(mousquetaire);
 }
 
+console.log("même ex mais avec un objet")
+
+const app= {
+    mousquetaires : ['Athos','Porthos','Aramis'],
+    init(){
+        for (let i = 0; i < this.mousquetaires.length; i++) {
+            console.log(`${this.mousquetaires[i]}`);
+        }
+        console.log()
+        this.mousquetaires.push('d‘Artagnan.');
+        console.log("Ils sont quatre à présent :");
+        this.mousquetaires.forEach((mousquetaire) => console.log(mousquetaire));
+        this.mousquetaires.splice(2, 1);
+        console.log("Le pauvre Aramis est mort…");
+        for (const mousquetaire of this.mousquetaires) {
+            console.log(mousquetaire);
+        }
+    },
+}
+app.init();

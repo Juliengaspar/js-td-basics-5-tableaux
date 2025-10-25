@@ -59,3 +59,57 @@ if (isValid(userDays,userMonth,userYear )) {
     console.log(`date invalid ${userYear}, ${userMonth}, ${userDays}`)
 
 }
+const app = {
+    userDays : parseInt(prompt("Entrez le jour")),
+    userMonth : parseInt(prompt("Entrez le mois")),
+    userYear : parseInt(prompt("Entrez une année: ")),
+
+    isBissextile(annee) {
+    // Code pour déterminer si 'annee' est bissextile
+    return ((annee % 4 === 0 &&annee % 100 !== 0) || annee % 400 === 0);
+},
+
+    isValid(jour, mois, annee){
+       let maxDays = 31;
+        const joursMois = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];//chaque jours max lors d'un mois
+
+        if (annee <1 || mois < 1 || jour < 1) {
+            console.log(`L’années , le mois , le jour doivent êtres positif : année ->${annee} moins ->${mois} -> jours ->${jour}`)
+            return false
+        }
+        if (mois >12 ) {
+            console.log('Le mois doit etres plus petit que 12')
+            return false
+        }
+        if (mois ===4 || mois ===6 || mois ===9 || mois ===11) {
+            maxDays = 30;
+        }
+        if (mois === 2) {
+            if (this.isBissextile(annee)) {
+                joursMois.splice(1, 1, 29);
+
+                maxDays = 29;
+            } else {
+                maxDays = 28;
+            }
+        }
+        if (jour>1 && jour<= joursMois[mois-1]){
+            return true;
+        }else {
+            console.log(`le nombres de jours dans le mois dois etres inferior ou egale à ${maxDays} jours.`);
+
+            return false;
+        }
+
+    },
+    init(){
+        // Utilisez 'isValid' pour vérifier si une date est valide avant d'afficher un message dans la console
+        if (this.isValid(this.userDays,this.userMonth,this.userYear )) {
+            console.log(`super c‘est une bonne ${this.userYear}, ${this.userMonth}, ${this.userDays} date`)
+        }else {
+            console.log(`date invalid ${this.userYear}, ${this.userMonth}, ${this.userDays}`)
+
+        }
+    }
+}
+app.init();

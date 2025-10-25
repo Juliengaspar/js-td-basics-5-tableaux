@@ -52,3 +52,24 @@ for (const number of numbers) {
 }
     console.log(message2 + ' =' + sum);
     console.log(`somme des valeurs du tableau = ${sum2}`);
+
+console.log("même ex avec un obj")
+
+const app ={
+    numbers : [11, 3, 7, 2, 9, 10],
+    message : " ",
+    sum : 0,
+    init() {
+        console.log("Voici mon tableau de nombres :")
+        for (let i = 1; i < this.numbers.length; i++) {
+            console.log(this.numbers[i]);
+            this.sum +=  this.numbers[i];
+            this.message +=  this.numbers[i];
+            if (i < this.numbers.length - 1) {
+                this.message += " + " ;
+            }
+        }
+        console.log(this.message+ ' =' + this.sum)
+    }
+}
+app.init();

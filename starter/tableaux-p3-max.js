@@ -21,3 +21,21 @@ for (let i = 0; i < number.length; i++) {//parcourer le tableaux
     }
 }
 console.log(`La plus grande valeur de mon tableau est ${max}`);//on affiche
+
+console.log("même ex avec un obj");
+const app = {
+    number : [3,11,7,2,9,10],
+    max : 0,
+    init(){
+        for (let i = 0; i < this.number.length; i++) {//parcourer le tableaux
+            console.table(this.number[i]);
+            if (this.number[i] > this.max) {//tester chaque element du tableaux et si plus grand que max il devien la nouvel valeur de max et il teste les suivante pour tester
+                this.max = this.number[i];//on met la valeur la plus grand a max
+
+            }
+        }
+        console.log(`La plus grande valeur de mon tableau est ${this.max}`);//on affiche
+
+    }
+}
+app.init();
